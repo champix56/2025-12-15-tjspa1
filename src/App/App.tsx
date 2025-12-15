@@ -6,22 +6,21 @@ function App() {
       <br />
       <Button
         bgColor="tomato"
-        title={"benjamin"}
-        onButtonClick={(param) => {
-          console.log("j'ai cliqué sur benjamin", param);
+        onButtonClick={() => {
+          console.log("j'ai cliqué sur benjamin");
         }}
       >
         OK
       </Button>
       <Button
         bgColor="aquamarine"
-        onButtonClick={(param) => {
-          console.log("j'ai cliqué sur ok", param);
+        onButtonClick={() => {
+          console.log("j'ai cliqué sur ok");
         }}
       >
         <div>Cancel</div>
       </Button>
-      <Button>
+      <Button >
         <div>3eme</div>
         <div>button</div>
       </Button>
