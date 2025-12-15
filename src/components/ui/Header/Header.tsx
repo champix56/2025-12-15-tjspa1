@@ -1,12 +1,10 @@
-import React, { FC } from 'react';
+import React from 'react';
 import styles from './Header.module.css';
 
-interface HeaderProps {}
-
-const Header: FC<HeaderProps> = () => (
+const Header: React.FC = () => (
   <div className={styles.Header} data-testid="Header">
-    Header Component
-  </div>
+    <span className={styles.meme}>Meme<span className={styles.dot}>.</span><span className={styles.react}>react</span>
+  </span></div>
 );
 
 export default Header;

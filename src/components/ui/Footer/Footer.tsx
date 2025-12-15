@@ -1,11 +1,9 @@
-import React, { FC } from 'react';
+import React from 'react';
 import styles from './Footer.module.css';
 
-interface FooterProps {}
-
-const Footer: FC<FooterProps> = () => (
+const Footer: React.FC = () => (
   <div className={styles.Footer} data-testid="Footer">
-    Footer Component
+    DESORBAIX - Orsys &copy; 2025
   </div>
 );
 
