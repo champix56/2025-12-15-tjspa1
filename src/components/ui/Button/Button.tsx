@@ -11,7 +11,7 @@ const [isClicked, setisClicked] = useState(false)
   return (
     <button
       type={type}
-      className={style.Button}
+      className={style.Button +(isClicked?' '+style.clicked:'')}
       style={{ backgroundColor: bgColor }}
       onClick={() => {
         setisClicked(true);
