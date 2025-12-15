@@ -6,15 +6,13 @@ function App() {
       <br />
       <Button
         title={"benjamin"}
-        bool={true}
-        number={123}
-        arr={[1, 2, 3]}
-        obj={{ abc: 123 }}
-        fn={()=>{
-         
-        }}
+        onButtonClick={(param)=>{
+         console.log("j'ai cliqué sur benjamin",param)
+        }} 
       />
-      <Button title="ok"></Button>
+      <Button title="ok"  onButtonClick={(param)=>{
+         console.log("j'ai cliqué sur ok",param)
+        }} ></Button>
       <Button title="cancel"></Button>
     </div>
   );
