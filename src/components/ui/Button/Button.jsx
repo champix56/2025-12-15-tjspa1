@@ -1,8 +1,8 @@
 import React from "react";
 import style from './Button.module.css'
-const Button = ({ title, onButtonClick, bgColor }) => {
-  console.log(style);
-  return (
+const Button = ({ children, onButtonClick, bgColor }) => {
+   console.trace(children);
+  return  (
     <button
       className={style.Button}
       style={{backgroundColor:bgColor}}
@@ -11,7 +11,7 @@ const Button = ({ title, onButtonClick, bgColor }) => {
         onButtonClick(title);
       }}
     >
-      {title}
+      {children}
     </button>
   );
 };
