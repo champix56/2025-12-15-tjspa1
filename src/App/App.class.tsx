@@ -8,7 +8,18 @@ type State = {
 class App extends PureComponent<undefined, State> {
   constructor(props: any) {
     super(props);
-    this.state = { counter: 0 };
+    this.state = { counter: -100 };
+  }
+  componentDidMount(): void {
+    this.setState({ counter: 0 });
+  }
+  componentWillUnmount(): void {}
+  componentDidUpdate(
+    prevProps: undefined,
+    prevState: Readonly<State>,
+    snapshot?: any
+  ): void {
+    console.log(this.state.counter);
   }
   render() {
     return (
