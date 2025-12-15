@@ -34,6 +34,17 @@
       "customTemplate": {
         "component": "grc/function/TemplateName.tsx"
       }
+    },
+    "page": {
+      "path": "src/pages",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": true,
+      "withLazy": true,
+      "customTemplate": {
+        "component": "grc/nude-function/TemplateName.tsx",
+        "story":"grc/nude-function/readme.md"
+      }
     }
   }
 }
