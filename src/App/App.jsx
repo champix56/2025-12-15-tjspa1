@@ -4,7 +4,16 @@ function App() {
     <div>
       DEMAT BREIZH
       <br />
-      <Button title="benjamin"></Button>
+      <Button
+        title={"benjamin"}
+        bool={true}
+        number={123}
+        arr={[1, 2, 3]}
+        obj={{ abc: 123 }}
+        fn={()=>{
+         
+        }}
+      />
       <Button title="ok"></Button>
       <Button title="cancel"></Button>
     </div>

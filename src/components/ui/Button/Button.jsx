@@ -1,7 +1,7 @@
 import React from 'react'
-const Button=({title}) => {
-    console.log(title);
-    return <div>{title}</div>
+const Button=(props) => {
+    console.log(props);
+    return <div className="Button">{props.title}</div>
 }
 
 export default Button;
