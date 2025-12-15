@@ -5,12 +5,13 @@ function App() {
       DEMAT BREIZH
       <br />
       <Button
+      bgColor="tomato"
         title={"benjamin"}
         onButtonClick={(param)=>{
          console.log("j'ai cliqué sur benjamin",param)
         }} 
       />
-      <Button title="ok"  onButtonClick={(param)=>{
+      <Button bgColor='aquamarine' title="ok"  onButtonClick={(param)=>{
          console.log("j'ai cliqué sur ok",param)
         }} ></Button>
       <Button title="cancel"></Button>
