@@ -1,8 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../components/ui/Button/Button";
 
 const App: React.FC<undefined> = () => {
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(-100);
+  useEffect(() => {
+    //componentDidMount
+    console.log('didMount');
+    setCounter(0);
+    
+    return () => {
+      //componentWillUnmount
+    };
+  }, []);
+  useEffect(() => {
+    console.log('counter effect',counter);
+  }, [counter]);
+
   return (
     <div style={{ textAlign: "center" }}>
       valeur de counter :{counter}
