@@ -1,8 +1,9 @@
 import React from "react";
+import './Button.css';
 const Button = ({ title, onButtonClick }) => {
   console.log(title);
   return (
-    <div
+    <button
       className="Button"
       onClick={(evt) => {
         //traitement event
@@ -10,7 +11,7 @@ const Button = ({ title, onButtonClick }) => {
       }}
     >
       {title}
-    </div>
+    </button>
   );
 };
 
