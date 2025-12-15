@@ -11,7 +11,7 @@
       "withTest": true,
       "withStory": true,
       "withLazy": true,
-      "customTemplate": {
+      "customTemplates": {
         "component": "grc/function/TemplateName.tsx"
       }
     },
@@ -21,7 +21,7 @@
       "withTest": true,
       "withStory": true,
       "withLazy": true,
-      "customTemplate": {
+      "customTemplates": {
         "component": "grc/function/TemplateName.tsx"
       }
     },
@@ -31,8 +31,9 @@
       "withTest": true,
       "withStory": true,
       "withLazy": true,
-      "customTemplate": {
-        "component": "grc/function/TemplateName.tsx"
+      "customTemplates": {
+        "component": "grc/layout-function/TemplateName.tsx",
+        "style": "grc/layout-function/TemplateName.module.css"
       }
     },
     "page": {
@@ -41,7 +42,7 @@
       "withTest": true,
       "withStory": true,
       "withLazy": true,
-      "customTemplate": {
+      "customTemplates": {
         "component": "grc/nude-function/TemplateName.tsx",
         "story":"grc/nude-function/readme.md"
       }
