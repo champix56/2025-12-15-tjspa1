@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "component":"npx generate-react-cli c",
     "component:page":"npx generate-react-cli c --type=page",
     "component:layout":"npx generate-react-cli c --type=layout",
     "component:ui":"npx generate-react-cli c --type=ui"

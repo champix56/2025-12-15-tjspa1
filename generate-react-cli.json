@@ -26,7 +26,7 @@
       }
     },
     "layout": {
-      "path": "src/components/ui",
+      "path": "src/components/layout",
       "withStyle": true,
       "withTest": true,
       "withStory": true,
