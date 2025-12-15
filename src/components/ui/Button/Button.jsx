@@ -1,6 +1,6 @@
 import React from "react";
 import style from './Button.module.css'
-const Button = ({ children, onButtonClick, bgColor }) => {
+const Button = ({ children, onButtonClick, bgColor='red' }) => {
    console.trace(children);
   return  (
     <button
@@ -15,5 +15,6 @@ const Button = ({ children, onButtonClick, bgColor }) => {
     </button>
   );
 };
+
 
 export default Button;
