@@ -1,16 +1,20 @@
-.Button{
-    border:none;
-    border-radius: 7px;
-    padding:5px 10px;
-    font-size: 14pt;
-    font-weight: 900;
-    margin-right:20px ;
-    box-shadow: 25px 25px 25px grey;
-    min-width: 100px;
+.Button {
+  border: none;
+  border-radius: 7px;
+  padding: 5px 10px;
+  font-size: 14pt;
+  font-weight: 900;
+  margin-right: 20px;
+  box-shadow: 25px 25px 25px grey;
+  min-width: 100px;
 
-    color: white;
+  color: white;
 }
-.Button:hover{
-        box-shadow: 15px 15px 25px grey;
-        border:1px solid #AFAFAF
+.Button:hover {
+  box-shadow: 15px 15px 25px grey;
+  border: 1px solid #afafaf;
+}
+.Button.clicked {
+  box-shadow: 5px 5px 25px grey;
+  transform: translateY(4px);
 }
