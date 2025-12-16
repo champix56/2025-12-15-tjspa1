@@ -10,6 +10,7 @@ import { REST_API_RESSOURCES, REST_API_URL } from "../config/constantes";
 type TImages = Array<ImageInterface>;
 
 const App: React.FC = () => {
+  const [current, setcurrent] = useState(emptyMeme);
   const [images, setImages] = useState<TImages>([]);
   useEffect(() => {
     fetch(`${REST_API_URL}${REST_API_RESSOURCES.images}`)
@@ -19,14 +20,24 @@ const App: React.FC = () => {
 
   return (
     <>
-      <div>images:{JSON.stringify(images)}</div>
+      {/* <div>images:{JSON.stringify(images)}</div> */}
       <div className="App">
         <FlexH3Grow>
           <Header />
           <Navbar />
           <FlexV1Grow>
-            <MemeSVGViewer meme={emptyMeme} image={undefined} basePath="" />
-            <MemeForm />
+            <MemeSVGViewer
+              meme={current}
+              image={images.find((item) => item.id === current.imageId)}
+              basePath=""
+            />
+            <MemeForm
+              images={images}
+              meme={current}
+              onMemeChange={(meme) => {
+                setcurrent(meme);
+              }}
+            />
           </FlexV1Grow>
           <Footer />
         </FlexH3Grow>
