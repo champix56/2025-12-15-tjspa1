@@ -12,7 +12,8 @@
     "component": "npx generate-react-cli c",
     "component:ui": "npx generate-react-cli c --type=ui",
     "component:layout": "npx generate-react-cli c --type=layout",
-    "component:functionnal": "npx generate-react-cli c --type=functionnal"
+    "component:functionnal": "npx generate-react-cli c --type=functionnal",
+    "component:page": "npx generate-react-cli c --type=page"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",

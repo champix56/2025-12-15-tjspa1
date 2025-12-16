@@ -5,6 +5,9 @@ import Footer from "../components/ui/Footer/Footer";
 import Header from "../components/ui/Header/Header";
 import Navbar from "../components/ui/Navbar/Navbar";
 import MemeSvgViewer from "../components/ui/MemeSvgViewer/MemeSvgViewer.stored.js";
+import { Route, Routes } from "react-router";
+import Home from "../pages/Home/Home.js";
+import Editor from "../pages/Editor/Editor.js";
 
 
 const App: React.FC = () => {
@@ -15,10 +18,11 @@ const App: React.FC = () => {
         <FlexH3Grow>
           <Header />
           <Navbar />
-          <FlexV1Grow>
-            <MemeSvgViewer basePath=""/>
-            <MemeForm />
-          </FlexV1Grow>
+          <Routes>
+              <Route path="/" Component={Home}/>
+              <Route path="/home" Component={Home}/>
+              <Route path="/editor" Component={Editor}/>
+          </Routes>
           <Footer />
         </FlexH3Grow>
       </div>
