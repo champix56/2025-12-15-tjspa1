@@ -1,0 +1,19 @@
+.Header {
+    color: grey;
+    font-weight: 900;
+    font-size: xx-large;
+    text-decoration: underline;
+}
+
+.meme {
+    color: tomato;
+}
+
+.dot {
+    color: black;
+}
+
+.react {
+    font-style: italic;
+    color: skyblue;
+}
