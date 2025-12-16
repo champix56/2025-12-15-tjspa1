@@ -8,6 +8,7 @@ import MemeSvgViewer from "../components/ui/MemeSvgViewer/MemeSvgViewer.stored.j
 import { Route, Routes } from "react-router";
 import Home from "../pages/Home/Home.js";
 import Editor from "../pages/Editor/Editor.js";
+import Thumbnail from "../pages/Thumbnail/Thumbnail.js";
 
 
 const App: React.FC = () => {
@@ -23,6 +24,7 @@ const App: React.FC = () => {
               <Route path="/home" Component={Home}/>
               <Route path="/editor" Component={Editor}/>
               <Route path="/editor/:id" Component={Editor}/>
+              <Route path="/thumbnail" Component={Thumbnail}/>
           </Routes>
           <Footer />
         </FlexH3Grow>
