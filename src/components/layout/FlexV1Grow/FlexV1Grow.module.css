@@ -1,1 +1,7 @@
-.FlexV1Grow {}
+.FlexV1Grow {
+  display: flex;
+}
+.FlexV1Grow > *:first-child {
+  flex-grow: 1;
+  height: 100%;
+}

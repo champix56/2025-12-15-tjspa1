@@ -1,20 +1,10 @@
-import React from "react";
-import styles from "./Header.module.css";
+import React from 'react';
+import styles from './Header.module.css';
 
-interface IHeaderProps {
-  children?: React.ReactNode;
-  parentStyle?: React.CSSProperties;
-}
-
-const Header: React.FC<IHeaderProps> = ({
-  parentStyle,
-  children = "Header Component",
-}) => {
-  return (
-    <div className={styles.Header} style={parentStyle} data-testid="Header">
-      {children}
-    </div>
-  );
-};
+const Header: React.FC = () => (
+  <div className={styles.Header} data-testid="Header">
+    <span className={styles.meme}>Meme<span className={styles.dot}>.</span><span className={styles.react}>react</span>
+  </span></div>
+);
 
 export default Header;
