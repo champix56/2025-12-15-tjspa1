@@ -22,7 +22,7 @@ const Button = ({
   return (
     <button
       type={type}
-      className={style.Button + (isClicked ? " " + style.clicked : "")}
+      className={`${style.Button}${isClicked ? ` ${style.clicked}` : ""}`}
       style={{ backgroundColor: bgColor }}
       onClick={() => {
         setisClicked(true);
