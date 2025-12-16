@@ -22,6 +22,7 @@ const App: React.FC = () => {
               <Route path="/" Component={Home}/>
               <Route path="/home" Component={Home}/>
               <Route path="/editor" Component={Editor}/>
+              <Route path="/editor/:id" Component={Editor}/>
           </Routes>
           <Footer />
         </FlexH3Grow>
