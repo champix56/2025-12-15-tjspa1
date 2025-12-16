@@ -1,24 +1,37 @@
-import { emptyMeme, MemeSVGViewer } from "orsys-tjs-meme";
+import { emptyMeme, MemeSVGViewer, type ImageInterface } from "orsys-tjs-meme";
 import MemeForm from "../components/functionnal/MemeForm/MemeForm";
 import FlexH3Grow from "../components/layout/FlexH3Grow/FlexH3Grow";
 import FlexV1Grow from "../components/layout/FlexV1Grow/FlexV1Grow";
 import Footer from "../components/ui/Footer/Footer";
 import Header from "../components/ui/Header/Header";
 import Navbar from "../components/ui/Navbar/Navbar";
+import { useEffect, useState } from "react";
+import { REST_API_RESSOURCES, REST_API_URL } from "../config/constantes";
+type TImages = Array<ImageInterface>;
 
 const App: React.FC = () => {
+  const [images, setImages] = useState<TImages>([]);
+  useEffect(() => {
+    fetch(`${REST_API_URL}${REST_API_RESSOURCES.images}`)
+      .then((r) => r.json())
+      .then((imgs) => setImages(imgs));
+  }, []);
+
   return (
-    <div className="App">
-      <FlexH3Grow>
-        <Header />
-        <Navbar />
-        <FlexV1Grow>
-          <MemeSVGViewer meme={emptyMeme} image={undefined} basePath=""/>
-          <MemeForm />
-        </FlexV1Grow>
-        <Footer/>
-      </FlexH3Grow>
-    </div>
+    <>
+      <div>images:{JSON.stringify(images)}</div>
+      <div className="App">
+        <FlexH3Grow>
+          <Header />
+          <Navbar />
+          <FlexV1Grow>
+            <MemeSVGViewer meme={emptyMeme} image={undefined} basePath="" />
+            <MemeForm />
+          </FlexV1Grow>
+          <Footer />
+        </FlexH3Grow>
+      </div>
+    </>
   );
 };
 
