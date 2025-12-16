@@ -1,8 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import ressourcesReducer from "./ressources";
 import { loadRessources } from "./asyncCaller";
+import currentReducer from "./current";
 
-const store = configureStore({ reducer: { ressources: ressourcesReducer } });
+const store = configureStore({ reducer: { ressources: ressourcesReducer, current: currentReducer } });
 store.subscribe(() => console.log(store.getState()))
 store.dispatch(loadRessources());
 
