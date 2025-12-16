@@ -1,5 +1,5 @@
 import { emptyMeme, MemeSVGViewer, type ImageInterface } from "orsys-tjs-meme";
-import MemeForm from "../components/functionnal/MemeForm/MemeForm";
+import MemeForm from "../components/functionnal/MemeForm/MemeForm.stored.js";
 import FlexH3Grow from "../components/layout/FlexH3Grow/FlexH3Grow";
 import FlexV1Grow from "../components/layout/FlexV1Grow/FlexV1Grow";
 import Footer from "../components/ui/Footer/Footer";
@@ -32,13 +32,7 @@ const App: React.FC = () => {
               image={images.find((item) => item.id === current.imageId)}
               basePath=""
             />
-            <MemeForm
-              images={images}
-              meme={current}
-              onMemeChange={(meme) => {
-                setcurrent(meme);
-              }}
-            />
+            <MemeForm />
           </FlexV1Grow>
           <Footer />
         </FlexH3Grow>
