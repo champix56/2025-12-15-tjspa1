@@ -4,10 +4,12 @@ import { loadRessources, saveCurrent } from './asyncCaller';
 interface IRessourcesState {
     memes: Array<MemeInterface>;
     images: Array<ImageInterface>;
+    loaded:boolean;
 }
 const initialState: IRessourcesState = {
     memes: [],
-    images: []
+    images: [],
+    loaded:false
 }
 
 const ressources = createSlice({
@@ -19,6 +21,7 @@ const ressources = createSlice({
         builder.addCase(loadRessources.fulfilled, (state, action: { type: string, payload: { images: Array<ImageInterface>, memes: Array<MemeInterface> } }) => {
             state.images.push(...action.payload.images)
             state.memes.push(...action.payload.memes)
+            state.loaded=true;
         })
         builder.addCase(saveCurrent.fulfilled,(state,{payload})=>{
             const position=state.memes.findIndex(m=>m.id===payload.id);
