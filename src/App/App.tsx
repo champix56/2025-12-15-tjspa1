@@ -7,6 +7,7 @@ import Header from "../components/ui/Header/Header";
 import Navbar from "../components/ui/Navbar/Navbar";
 import { useEffect, useState } from "react";
 import { REST_API_RESSOURCES, REST_API_URL } from "../config/constantes";
+import '../store/store.js'
 type TImages = Array<ImageInterface>;
 
 const App: React.FC = () => {

@@ -1,8 +1,11 @@
+import { configureStore } from "@reduxjs/toolkit";
 
 const initialState = {
   memes: []
 }
 const reducer = (state = initialState, { type, payload }) => {
+  console.log(type, payload);
+
   switch (type) {
     case "ADD_MEME":
       return { ...state, memes: [...state.memes, payload] }
@@ -22,15 +25,11 @@ const removeMeme = (meme) => {
   return { type: 'REMOVE_MEME', payload: meme }
 }
 
-let state = reducer(undefined, { type: '@@INIT' });
-console.log(state);
-state = reducer(state, addMeme({ id: 0, name: 'coucou' }));
-console.log(state);
-state = reducer(state, addMeme({ id: 1, name: 'toto' }));
-console.log(state);
-state = reducer(state, addMeme({ id: 2, name: 'hello' }));
-console.log(state);
-state = reducer(state, addMeme({ id: 3, name: 'ola' }));
-console.log(state);
-state = reducer(state, removeMeme({ id: 1, name: 'toto' }));
-console.log(state);
+const store = configureStore({ reducer: reducer });
+store.subscribe(() => console.log(store.getState()))
+
+store.dispatch(addMeme({ id: 0, name: 'coucou' }))
+store.dispatch(addMeme({ id: 1, name: 'toto' }))
+store.dispatch(addMeme({ id: 2, name: 'hello' }))
+store.dispatch(addMeme({ id: 3, name: 'ola' }))
+store.dispatch(removeMeme({ id: 1, name: 'toto' }))
