@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "./MemeForm.module.css";
 import Button from "../../ui/Button/Button";
 import type { IMemeFormProps } from "./MemeForm.interface";
