@@ -1,7 +1,7 @@
 import { createAsyncThunk, type AsyncThunk, type AsyncThunkConfig } from "@reduxjs/toolkit";
 import { REST_API_RESSOURCES, REST_API_URL } from "../config/constantes";
 import type { MemeInterface } from "orsys-tjs-meme";
-export const fetcDatas = createAsyncThunk("ressources/fetch", async () => {
+export const fetchDatas = createAsyncThunk("ressources/fetch", async () => {
   const pi = fetch(`${REST_API_URL}${REST_API_RESSOURCES.images}`);
   const pm = fetch(`${REST_API_URL}${REST_API_RESSOURCES.memes}`);
   const ra = await Promise.all([pi, pm]);
