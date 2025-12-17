@@ -1,18 +1,12 @@
-import { useEffect, useState } from "react";
 import StandaloneMemeForm from "./MemeForm";
-import { store } from "../../../store/store";
+import { store, type StoreState } from "../../../store/store";
 import { update } from "../../../store/current";
 import type { IMemeFormStored } from "./MemeForm.interface";
+import { useSelector } from "react-redux";
 
 const MemeForm: React.FC<IMemeFormStored> = (props) => {
-  const [images, setimages] = useState(store.getState().ressources.images);
-  const [current, setcurrent] = useState(store.getState().current.meme);
-  useEffect(() => {
-    store.subscribe(() => {
-      setimages(store.getState().ressources.images);
-      setcurrent(store.getState().current.meme);
-    });
-  }, []);
+  const images = useSelector((s:StoreState) => s.ressources.images);
+  const current = useSelector((s:StoreState) => s.current.meme);
 
   return (
     <StandaloneMemeForm
@@ -20,7 +14,7 @@ const MemeForm: React.FC<IMemeFormStored> = (props) => {
       images={images}
       meme={current}
       onMemeChange={(meme) => {
-        store.dispatch(update(meme));²
+        store.dispatch(update(meme));
       }}
     />
   );
