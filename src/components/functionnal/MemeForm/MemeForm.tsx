@@ -1,15 +1,11 @@
 import React from "react";
 import styles from "./MemeForm.module.css";
-import type { ImageInterface, MemeInterface } from "orsys-tjs-meme";
 import Button from "../../ui/Button/Button";
+import type { IMemeFormProps } from "./MemeForm.interface";
 
 //const initialState = {};
-interface IMemeFormProps {
-  images: Array<ImageInterface>;
-  meme: MemeInterface;
-  onMemeChange:(meme:MemeInterface)=>void;
-}
-const MemeForm: React.FC<IMemeFormProps> = ({ images, meme, onMemeChange }) => {
+
+const MemeForm: React.FC<IMemeFormProps> = ({style, images, meme, onMemeChange }) => {
 
   const onNumberChange = (
     evt: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -23,7 +19,7 @@ const MemeForm: React.FC<IMemeFormProps> = ({ images, meme, onMemeChange }) => {
     onMemeChange({...meme, [evt.target.name]: evt.target.checked });
   };
   return (
-    <div className={styles.MemeForm} data-testid="MemeForm">
+    <div className={styles.MemeForm} data-testid="MemeForm" style={style}>
       <form
         onSubmit={(evt) => {
           evt.preventDefault();
@@ -133,7 +129,7 @@ const MemeForm: React.FC<IMemeFormProps> = ({ images, meme, onMemeChange }) => {
           name="underline"
           id="underline"
           type="checkbox"
-          checked={current.underline}
+          checked={meme.underline}
           onChange={onCheckChange}
         />
         &nbsp;
@@ -149,7 +145,7 @@ const MemeForm: React.FC<IMemeFormProps> = ({ images, meme, onMemeChange }) => {
           name="italic"
           id="italic"
           type="checkbox"
-          checked={current.italic}
+          checked={meme.italic}
           onChange={onCheckChange}
 
         />
