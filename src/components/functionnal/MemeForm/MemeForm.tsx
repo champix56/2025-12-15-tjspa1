@@ -5,8 +5,7 @@ import type { IMemeFormProps } from "./MemeForm.interface";
 
 //const initialState = {};
 
-const MemeForm: React.FC<IMemeFormProps> = ({style, images, meme, onMemeChange, onMemeSave }) => {
-
+const MemeForm: React.FC<IMemeFormProps > = ({ style,images, meme, onMemeChange }) => {
   const onNumberChange = (
     evt: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -23,7 +22,7 @@ const MemeForm: React.FC<IMemeFormProps> = ({style, images, meme, onMemeChange, 
       <form
         onSubmit={(evt) => {
           evt.preventDefault();
-          onMemeSave(meme);
+        //  onMemeChange(current);
         }}
       >
         <label htmlFor="titre">

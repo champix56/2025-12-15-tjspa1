@@ -1,32 +1,30 @@
-import { createSlice } from "@reduxjs/toolkit";
-import type { ImageInterface, MemeInterface } from "orsys-tjs-meme";
-import {images,memes} from '../../db.json'
-import { fetcDatas } from "./asyncCaller";
+import { createSlice } from '@reduxjs/toolkit'
+import type { ImageInterface, MemeInterface } from 'orsys-tjs-meme';
+import { loadRessources, saveCurrent } from './asyncCaller';
 interface IRessourcesState {
-  memes: Array<MemeInterface>;
-  images: Array<ImageInterface>;
-  loaded: boolean;
+    memes: Array<MemeInterface>;
+    images: Array<ImageInterface>;
+    loaded:boolean;
 }
 const initialState: IRessourcesState = {
-  memes: memes,
-  images: images,
-  loaded: true,
-};
+    memes: [],
+    images: [],
+    loaded:false
+}
 
 const ressources = createSlice({
-  name: "ressources",
-  initialState,
-  reducers: {
-   
-  },
-  extraReducers:(b)=>{
-    b.addCase(fetcDatas.fulfilled,(s,a)=>{
-      s.memes=a.payload.memes;
-      s.images=a.payload.images;
-    })
-  }
+    name: 'ressources',
+    initialState,
+    reducers: {
+    },
+    extraReducers: (builder) => {
+        builder.addCase(loadRessources.fulfilled, (state, action: { type: string, payload: { images: Array<ImageInterface>, memes: Array<MemeInterface> } }) => {
+            state.images.push(...action.payload.images)
+            state.memes.push(...action.payload.memes)
+            state.loaded=true;
+        }) 
+    }
 });
 
-
-const  ressourcesReducer= ressources.reducer;
-export default ressourcesReducer;
+const ressourcesReducer = ressources.reducer;
+export default ressourcesReducer

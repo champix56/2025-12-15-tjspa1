@@ -52,6 +52,17 @@
         "test": "components-templates/TemplateName.test.tsx",
         "lazy": "components-templates/TemplateName.lazy.tsx"
       }
+    },
+    "page": {
+      "path": "src/pages",
+      "withStyle": false,
+      "withTest": false,
+      "withStory": false,
+      "withLazy": false,
+      "customTemplates": {
+        "component": "components-templates/generic-page/TemplateName.tsx"
+    
+      }
     }
   }
 }
