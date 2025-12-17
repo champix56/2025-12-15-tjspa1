@@ -8,4 +8,5 @@ export type IMemeFormProps=IMemeFormStored & {
   images: Array<ImageInterface>;
   meme: MemeInterface;
   onMemeChange:(meme:MemeInterface)=>void;
+  onMemeSave:(meme:MemeInterface)=>void;
 }
